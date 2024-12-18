@@ -63,7 +63,7 @@ class Transporte{
         Cidade* local_atual;
 
     public: 
-        Transporte(string nome, char tipo_transporte, int capacidade_passageiros, int velocidade, int distancia_descanso, int tempo_descanso, Cidade* local_atual){
+        Transporte(string nome, char tipo_transporte, int capacidade_passageiros, int velocidade, int distancia_descanso, int tempo_descanso, Cidade* local_atual = nullptr){
             this->nome = nome;
             this->tipo_transporte = tipo_transporte;
             this->capacidade_passageiros = capacidade_passageiros;
@@ -71,6 +71,10 @@ class Transporte{
             this->distancia_descanso = distancia_descanso;
             this->tempo_descanso = tempo_descanso;
             this->local_atual = local_atual;
+        }
+
+        string getNome(){
+            return this->nome;
         }
 
         char getTipoTransporte(){
@@ -113,7 +117,7 @@ class Passageiro{
         Cidade* local_atual;
 
     public:
-        Passageiro(string nome, Cidade* local_atual){
+        Passageiro(string nome, Cidade* local_atual = nullptr){
             this->nome = nome;
             this->local_atual = local_atual;
         }
